@@ -1,0 +1,56 @@
+/* Variables */
+@main-font: 'Mako';
+@container-width: 940px;
+
+/* Mix-ins */
+.main-shadow {
+  box-shadow: 0px 3px 6px 3px #aaa;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+
+/* Primary Elements */
+body {
+  font-family: @main-font, sans-serif;
+  background-color: #ddd;
+}
+
+h1 {
+  font-family: @main-font;
+  font-size: 24pt;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+
+hr.head {
+  margin-bottom: 0;
+}
+
+footer {
+  font-size: 10pt;
+}
+
+
+/* Classes */
+.main-container {
+  width: @container-width;
+  margin: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  background-color: #fff;
+  .main-shadow;
+}

@@ -130,8 +130,31 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
  class ThemeFunctions {
+ 	 public function getCss($style, $dir = null, $ext = false) {
+		$themedir = Router::url('/', true);
+		if ( $style == '' ) {
+			return null;
+		}
+		if ( $dir == null ) {
+			$css = ($themedir . 'css/' . $style . '.css');
+		} elseif ($dir == '/') {
+			$css = ($themedir . $style . '.css');
+		} else {
+			$css = ($themedir . $dir . '/' . $style . '.css');
+		}
+		/* If style is externally hosted, the directory is irrelevant. Just use the full URL */
+		if ( $ext == true ) {
+			$css = ($style);
+		}
+		$code = ('<link href="' . $css . '" rel="stylesheet" type="text/css">' . "\n");
+		return $code;
+	}
+
  	public function getLess($style, $dir = null) {
 		$themedir = Router::url('/', true);
+		if ( $style == '' ) {
+			return null;
+		}
 		if ( $dir == null ) {
 			$css = ($themedir . 'css/' . $style . '.less');
 		} elseif ($dir == '/') {
@@ -140,6 +163,16 @@ Cache::config('default', array('engine' => 'File'));
 			$css = ($themedir . $dir . '/' . $style . '.less');
 		}
 		$code = ('<link href="' . $css . '" rel="stylesheet" type="text/less">' . "\n");
+		return $code;
+	}
+	
+	public function getJs($script) {
+		$themedir = Router::url('/', true);
+		if ($script == '') {
+			return null;
+		}
+		$js = ($themedir . 'js/' . $script . '.js');
+		$code = ('<script src="' . $js . '"></script>' . "\n");
 		return $code;
 	}
 }

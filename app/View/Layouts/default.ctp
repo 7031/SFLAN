@@ -1,51 +1,17 @@
 <?php
-global $controller;
-global $pageid;
-$controller = $this->params['controller'];
-
-if ( $controller == "pages" ) {
-	$pageid = $page['Page']['id'];
-}
-
-function headerNav($navpage) {
-	global $controller;
-	global $pageid;
-	$output = "";
-	if ( $controller == "pages" ) {
-		if ( $navpage == $pageid ) {
-			$output = ('class="active"');
-		}
-	}
-	elseif ( $controller == $navpage ) {
-		$output = ('class="active"');
-	}
-	else {
-		$output = "";
-	}
-	return $output;
-}
-
+$Theme = new ThemeFunctions;
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <?php echo $this->Html->charset(); ?>
     <title><?php echo $title_for_layout; ?> - SausageFest LAN</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<meta content="authenticity_token" name="csrf-param" />
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <!-- Le styles -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/global.css" rel="stylesheet">
-
-
-    <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
+    <?php echo $Theme->getCss('bootstrap.min'); ?>
+    <?php echo $Theme->getLess('style'); ?>
   </head>
 
   <body>
@@ -72,7 +38,7 @@ function headerNav($navpage) {
 </div></div>
 */ ?>
 
-    <div class="container main">
+    <div class="main-container">
 
 		<?php echo $this->Session->flash(); ?>
 		<?php echo $content_for_layout; ?>
@@ -82,7 +48,11 @@ function headerNav($navpage) {
 		<footer>
 			<div class="row">
 				<div class="span6">
-					<p><a href="http://sflan.stuzzgaming.com/pages">Pages</a> | <a href="http://sflan.stuzzgaming.com/songs/">Songs</a> | <a href="http://sflan.stuzzgaming.com/games/">Games</a></p>
+					<p>
+						<?php echo $this->Html->link('Pages', array('controller' => 'pages', 'action' => 'index')); ?> | 
+						<?php echo $this->Html->link('Songs', array('controller' => 'songs', 'action' => 'index')); ?> | 
+						<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
+					</p>
 				</div>
 			</div>
 			<div class="row">
@@ -90,19 +60,20 @@ function headerNav($navpage) {
 					<p>&copy; SausageFest 2012</p>
 				</div>
 				<div class="span6" style="text-align: right;">
-					Site by <a href="http://www.stuzzhosting.com" rel="tooltip" title="StuzzHosting is Best Hosting">Joel Nichols</a>.
+					Site by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>.
 				</div>
 			</div>
 
 		</footer>
 
-    </div><!--/.fluid-container-->
+    </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-	<script src="/js/jquery.js" type="text/javascript"></script>
-	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<?php 
+		echo $Theme->getJs('jquery');
+		echo $Theme->getJs('bootstrap.min');
+		echo $Theme->getJs('less');
+	?>
 	<script type="text/javascript">
 	$('body').tooltip({
 		selector: "[rel=tooltip]"
