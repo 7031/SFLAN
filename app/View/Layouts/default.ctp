@@ -12,6 +12,10 @@ $Theme = new ThemeFunctions;
     <?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
     <?php echo $Theme->getCss('bootstrap.min'); ?>
     <?php echo $Theme->getLess('style'); ?>
+    <?php echo $Theme->getCss('font-awesome'); ?>
+    <!--[if IE 7]>
+		<link href="/css/font-awesome-ie7.css" rel="stylesheet">
+	<![endif]-->
   </head>
 
   <body>

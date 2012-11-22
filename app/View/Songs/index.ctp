@@ -4,11 +4,11 @@
 		<br />
 	</div>
 	<div class="span6" style="text-align: right;">
-	<a href="http://sflan.stuzzgaming.com/songs/play" class="btn">Play all</a> 
+	<?php echo $this->Html->link('Play all', array('controller' => 'songs', 'action' => 'play'), array('class' => 'btn')); ?>
 	<?php echo $this->Html->link('Add Song', array('controller' => 'songs', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 	</div>
 </div>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-hover">
 	<thead>
 		<th width="45%">Title</th>
 		<th width="45%">Artist</th>
@@ -20,8 +20,8 @@
 	<tr>
 		<td><?php echo h($song['Song']['title']); ?></td>
 		<td><?php echo h($song['Song']['artist']); ?></tD>
-		<td><a href="http://sflan.stuzzgaming.com/songs/view/<?php echo $song['Song']['id']; ?>">Listen</a></td>
-		<td><a href="http://sflan.stuzzgaming.com/songs/edit/<?php echo ($song['Song']['id']);?>" ><i class="icon-pencil"></i></a></td>
+		<td><?php echo $this->Html->link('Listen', array('controller' => 'songs', 'action' => 'view', $song["Song"]["id"])); ?></td>
+		<td><?php echo $this->Html->link('<i class="icon-pencil">', array('controller' => 'songs', 'action' => 'edit', $song["Song"]["id"]), array('escape' => false)); ?></td>
 	</tr>
 	<?php endforeach; ?>
 </table>
@@ -30,7 +30,7 @@
 		&nbsp;
 	</div>
 	<div class="span3" style="text-align: right;">
-		<a href="http://sflan.stuzzgaming.com/songs/play" class="btn">Play all</a> 
+		<?php echo $this->Html->link('Play all', array('controller' => 'songs', 'action' => 'play'), array('class' => 'btn')); ?>
 		<?php echo $this->Html->link('Add Song', array('controller' => 'songs', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 	</div>
 </div>
