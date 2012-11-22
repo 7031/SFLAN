@@ -10,6 +10,7 @@ class PagesController extends AppController {
 	
 	public function view($id = null) {
 		global $page;
+		require('../Vendor/markdown.php');
 		$this->Page->id = $id;
 		$this->set('page', $this->Page->read());
 	}

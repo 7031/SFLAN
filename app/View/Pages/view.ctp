@@ -6,5 +6,5 @@
 		<p><a href="/pages/edit/<?php echo $page['Page']['id']; ?>" class="btn"><i class="icon-pencil"></i> Edit</a></p>
 	</div>
 </div>
-<?php echo ($page['Page']['body']); ?>
+<?php echo Markdown($page['Page']['body']); ?>
 
