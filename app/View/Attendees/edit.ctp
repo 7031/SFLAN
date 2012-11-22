@@ -7,7 +7,7 @@
 		echo $this->Form->input('name', array('class' => 'span4', 'placeholder' => 'Name', 'label' => false));
 		echo $this->Form->input('nickname', array('class' => 'span4', 'placeholder' => 'Nickname', 'label' => false));
 		echo $this->Form->input('table', array('class' => 'span4', 'type' => 'select', 'options' => $tables, 'label' => false));
-		echo $this->Form->button('Add attendee', array('type' => 'submit', 'class' => 'btn btn-primary'));
+		echo $this->Form->button('Edit Attendee', array('type' => 'submit', 'class' => 'btn btn-primary'));
 		?>
 	</div>
 	<div class="span8">

@@ -21,10 +21,10 @@
 			if ($attendee['Attendee']['table'] == 0) { ?>
 				<tr>
 					<td>
-						<?php echo $attendee['Attendee']['name']; ?>
+						<?php echo h($attendee['Attendee']['name']); ?>
 					</td>
 					<td>
-						<?php echo $attendee['Attendee']['nickname']; ?>
+						<?php echo h($attendee['Attendee']['nickname']); ?>
 					</td>
 					<td>
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
@@ -55,10 +55,10 @@
 			if ($attendee['Attendee']['table'] == 1) { ?>
 				<tr>
 					<td>
-						<?php echo $attendee['Attendee']['name']; ?>
+						<?php echo h($attendee['Attendee']['name']); ?>
 					</td>
 					<td>
-						<?php echo $attendee['Attendee']['nickname']; ?>
+						<?php echo h($attendee['Attendee']['nickname']); ?>
 					</td>
 					<td>
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
@@ -91,10 +91,10 @@
 			if ($attendee['Attendee']['table'] == 2) { ?>
 				<tr>
 					<td>
-						<?php echo $attendee['Attendee']['name']; ?>
+						<?php echo h($attendee['Attendee']['name']); ?>
 					</td>
 					<td>
-						<?php echo $attendee['Attendee']['nickname']; ?>
+						<?php echo h($attendee['Attendee']['nickname']); ?>
 					</td>
 					<td>
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>

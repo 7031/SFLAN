@@ -8,6 +8,10 @@ class AttendeesController extends AppController {
 	}
 	
 	public function add() {
+		$table[0] = "Table 1";
+		$table[1] = "Table 2";
+		$table[2] = "Non-existent table";
+		$this->set('tables', $table);
 		if ($this->request->is('post')) {
 			if ($this->Attendee->save($this->request->data)) {
 				$this->Session->setFlash('
@@ -26,20 +30,17 @@ class AttendeesController extends AppController {
 				');
 			}
 		} else {
-			$table[0] = "Table 1";
-			$table[1] = "Table 2";
-			$table[2] = "Non-existent table";
-			$this->set('tables', $table);
+			
 		}
 	}
 	
 	public function edit($permalink = null) {
 		$attendee = $this->Attendee->findBySlug($permalink);
+		$table[0] = "Table 1";
+		$table[1] = "Table 2";
+		$table[2] = "Non-existent table";
+		$this->set('tables', $table);
 		if ($this->request->is('get')) {
-			$table[0] = "Table 1";
-			$table[1] = "Table 2";
-			$table[2] = "Non-existent table";
-			$this->set('tables', $table);
 			$this->request->data = $attendee;
 		} else {
 			if ($this->Attendee->save($this->request->data)) {
