@@ -45,7 +45,7 @@ $Theme = new ThemeFunctions;
     <div class="main-container">
     	<div class="row">
     		<div class="span6">
-    			<?php echo $this->Html->link('<h1>SFLAN</h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
+    			<?php echo $this->Html->link('<h1 class="logo">SFLAN</h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
     		</div>
     		<div class="span6">
     			<ul class="nav nav-pills pull-right">

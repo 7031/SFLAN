@@ -1,5 +1,4 @@
 <h1>Add Song</h1>
-<br>
 <div class="row">
 	<div class="span4">
 		<?php

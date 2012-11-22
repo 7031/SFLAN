@@ -32,7 +32,7 @@ class PagesController extends AppController {
 		} else {
 			if ($this->Page->save($this->request->data)) {
 				$this->Session->setFlash('<div class="alert alert-success"><button class="close" data-dismiss="alert">x</button>Your page has been updated</div>');
-				$this->redirect(array('action' => 'view', $page['Page']['slug']));	
+				$this->redirect(array('action' => 'view'));	
 			} else {
 				$this->Session->setFlash('<div class="alert alert-error"><button class="close" data-dismiss="alert">x</button>Unable to update the page.</div>');
 			}

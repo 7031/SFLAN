@@ -1,9 +1,8 @@
 <div class="row">
 	<div class="span6">
 		<h1>All pages</h1>
-		<br />
 	</div>
-	<div class="span6" style="text-align: right;">
+	<div class="span6 right">
 		<?php echo $this->Html->link('Add Page', array('controller' => 'pages', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 	</div>
 </div>
