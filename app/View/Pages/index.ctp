@@ -22,7 +22,7 @@
 			<?php echo $page['Page']['created']; ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('controller' => 'pages', 'action' => 'edit', $page['Page']['slug']), array('escape' => false)); ?>
+			<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'pages', 'action' => 'edit', $page['Page']['slug']), array('escape' => false)); ?>
 		</td>
 	</tr>
 	<?php endforeach; ?>

@@ -1,6 +1,6 @@
 <h1>Edit Attendee</h1>
 <div class="row">
-	<div class="span4">
+	<div class="span4 center">
 		<?php
 		echo $this->Form->create('Attendee');
 		echo $this->Form->input('id');

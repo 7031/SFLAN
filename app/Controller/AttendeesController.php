@@ -28,6 +28,7 @@ class AttendeesController extends AppController {
 		} else {
 			$table[0] = "Table 1";
 			$table[1] = "Table 2";
+			$table[2] = "Non-existent table";
 			$this->set('tables', $table);
 		}
 	}
@@ -37,6 +38,7 @@ class AttendeesController extends AppController {
 		if ($this->request->is('get')) {
 			$table[0] = "Table 1";
 			$table[1] = "Table 2";
+			$table[2] = "Non-existent table";
 			$this->set('tables', $table);
 			$this->request->data = $attendee;
 		} else {
