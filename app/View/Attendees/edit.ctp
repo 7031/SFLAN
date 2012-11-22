@@ -1,4 +1,4 @@
-<h1>Add Attendee</h1>
+<h1>Edit Attendee</h1>
 <div class="row">
 	<div class="span4">
 		<?php

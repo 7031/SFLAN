@@ -14,6 +14,34 @@
 			<thead>
 				<th>Name</th>
 				<th>Nickname</th>
+				<th></th>
+			</thead>
+			<?php 
+			foreach ($attendees as $attendee):
+			if ($attendee['Attendee']['table'] == 0) { ?>
+				<tr>
+					<td width="45%">
+						<?php echo $attendee['Attendee']['name']; ?>
+					</td>
+					<td width="45%">
+						<?php echo $attendee['Attendee']['nickname']; ?>
+					</td>
+					<td>
+						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
+					</td>
+				</tr>
+			<?	
+			}
+			endforeach;
+			?>
+		</table>
+	</div>
+	<div class="span6">
+		<h2>Table #2</h2>
+		<table class="table table-bordered table-striped table-hover">
+			<thead>
+				<th>Name</th>
+				<th>Nickname</th>
 			</thead>
 			<?php 
 			foreach ($attendees as $attendee):
@@ -30,15 +58,6 @@
 			}
 			endforeach;
 			?>
-		</table>
-	</div>
-	<div class="span6">
-		<h2>Table #2</h2>
-		<table class="table table-bordered table-striped table-hover">
-			<thead>
-				<th>Name</th>
-				<th>Nickname</th>
-			</thead>
 		</table>
 	</div>
 </div>

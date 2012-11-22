@@ -53,7 +53,7 @@ $Theme = new ThemeFunctions;
     					<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
     				</li>
     				<li>
-    					<?php echo $this->Html->link('Tables', array('controller' => 'pages', 'action' => 'view', 'tables')); ?>
+    					<?php echo $this->Html->link('Attendees', array('controller' => 'attendees', 'action' => 'index')); ?>
     				</li>
     				<li>
     					<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>

@@ -25,12 +25,19 @@ class AttendeesController extends AppController {
 					</div>
 				');
 			}
+		} else {
+			$table[0] = "Table 1";
+			$table[1] = "Table 2";
+			$this->set('tables', $table);
 		}
 	}
 	
 	public function edit($permalink = null) {
 		$attendee = $this->Attendee->findBySlug($permalink);
 		if ($this->request->is('get')) {
+			$table[0] = "Table 1";
+			$table[1] = "Table 2";
+			$this->set('tables', $table);
 			$this->request->data = $attendee;
 		} else {
 			if ($this->Attendee->save($this->request->data)) {
