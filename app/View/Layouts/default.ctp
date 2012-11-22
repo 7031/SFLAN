@@ -45,15 +45,15 @@ $Theme = new ThemeFunctions;
     <div class="main-container">
     	<div class="row">
     		<div class="span6">
-    			<h1>SFLAN</h1>
+    			<?php echo $this->Html->link('<h1>SFLAN</h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
     		</div>
     		<div class="span6">
     			<ul class="nav nav-pills pull-right">
     				<li>
-    					<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 1)); ?>
+    					<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
     				</li>
     				<li>
-    					<?php echo $this->Html->link('Tables', array('controller' => 'pages', 'action' => 'view', 2)); ?>
+    					<?php echo $this->Html->link('Tables', array('controller' => 'pages', 'action' => 'view', 'tables')); ?>
     				</li>
     				<li>
     					<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
@@ -82,7 +82,7 @@ $Theme = new ThemeFunctions;
 			</div>
 			<div class="row">
 				<div class="span6">
-					<p>&copy; SausageFest 2012</p>
+					<p>Code is poetry</p>
 				</div>
 				<div class="span6" style="text-align: right;">
 					Site by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>.

@@ -8,11 +8,10 @@ class PagesController extends AppController {
 		$this->set('pages', $this->Page->find('all'));
 	}
 	
-	public function view($id = null) {
-		global $page;
+	public function view($permalink = null) {
 		require('../Vendor/markdown.php');
-		$this->Page->id = $id;
-		$this->set('page', $this->Page->read());
+		$page = $this->Page->findBySlug($permalink);
+		$this->set('page', $page);
 	}
 	
 	public function add() {
@@ -26,14 +25,14 @@ class PagesController extends AppController {
 		}
 	}
 	
-	public function edit($id = null) {
-		$this->Page->id = $id;
+	public function edit($permalink = null) {
+		$page = $this->Page->findBySlug($permalink);
 		if ($this->request->is('get')) {
-			$this->request->data = $this->Page->read();
+			$this->request->data = $page;
 		} else {
 			if ($this->Page->save($this->request->data)) {
 				$this->Session->setFlash('<div class="alert alert-success"><button class="close" data-dismiss="alert">x</button>Your page has been updated</div>');
-				$this->redirect(array('action' => 'view', $id));	
+				$this->redirect(array('action' => 'view', $page['Page']['slug']));	
 			} else {
 				$this->Session->setFlash('<div class="alert alert-error"><button class="close" data-dismiss="alert">x</button>Unable to update the page.</div>');
 			}

@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="span6">
-		<h1>Songs</h1>
+		<h1>Music</h1>
 		<br />
 	</div>
 	<div class="span6" style="text-align: right;">

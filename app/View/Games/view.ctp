@@ -3,7 +3,7 @@
 		<h1><?php echo h($game['Game']['name']); ?></h1>
 	</div>
 	<div class="span6" style="text-align: right; margin-top: 6px;">
-		<p><?php echo $this->Html->link('<i class="icon-pencil"></i> Edit', array('controller' => 'games', 'action' => 'edit', $game['Game']['id']), array('escape' => false, 'class' => 'btn')); ?></p>
+		<p><?php echo $this->Html->link('<i class="icon-pencil"></i>Edit', array('controller' => 'games', 'action' => 'edit', $game['Game']['id']), array('escape' => false, 'class' => 'btn')); ?></p>
 	</div>
 </div>
 <div class="row">

@@ -25,7 +25,7 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */	
-	Router::connect('/', array('controller' => 'pages', 'action' => 'view', '1'));
+	Router::connect('/', array('controller' => 'pages', 'action' => 'view', 'welcome'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
@@ -40,6 +40,13 @@
 	Router::connect('/games/add', array('controller' => 'games', 'action' => 'add'));
 	Router::connect('/games/edit/*', array('controller' => 'games', 'action' => 'edit'));
 	Router::connect('/games/*', array('controller' => 'games', 'action' => 'view'));
+	
+	// Music
+	Router::connect('/music', array('controller' => 'songs', 'action' => 'index'));
+	Router::connect('/music/add', array('controller' => 'songs', 'action' => 'add'));
+	Router::connect('/music/edit/*', array('controller' => 'songs', 'action' => 'edit'));
+	Router::connect('/music/play', array('controller' => 'songs', 'action' => 'play'));
+	Router::connect('/music/listen/*', array('controller' => 'songs', 'action' => 'view')); 
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on 
