@@ -8,7 +8,7 @@ $nextSong = ($song['Song']['id'] +1);
 		<h2><?php echo $song['Song']['title'];?> by <?php echo $song['Song']['artist']; ?></h2>
 	</div>
 	<div class="span3" style="text-align: right;">
-		<a href="http://sflan.stuzzgaming.com/songs/edit/<?php echo $song['Song']['id']; ?>" class="btn btn-primary">Edit Song</a> 
+		<?php echo $this->Html->link('<i class="icon-pencil"></i> Edit', array('controller' => 'songs', 'action' => 'edit', $song['Song']['id']), array('escape' => false, 'class' => 'btn btn-primary')); ?>
 		<?php echo $this->Html->link('View List', array('controller' => 'songs', 'action' => "index"), array('class="btn"')); ?>
 	</div>
 </div>

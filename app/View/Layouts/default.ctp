@@ -64,7 +64,7 @@ $Theme = new ThemeFunctions;
     			</ul>
     		</div>
     	</div>
-
+		<hr class="head">
 		<?php echo $this->Session->flash(); ?>
 		<?php echo $content_for_layout; ?>
 
@@ -75,7 +75,7 @@ $Theme = new ThemeFunctions;
 				<div class="span6">
 					<p>
 						<?php echo $this->Html->link('Pages', array('controller' => 'pages', 'action' => 'index')); ?> | 
-						<?php echo $this->Html->link('Songs', array('controller' => 'songs', 'action' => 'index')); ?> | 
+						<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?> | 
 						<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
 					</p>
 				</div>
