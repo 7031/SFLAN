@@ -3,7 +3,7 @@
 		<h2><?php echo $song['Song']['title'];?> by <?php echo $song['Song']['artist']; ?></h2>
 	</div>
 	<div class="span2" style="text-align: right;">
-		<a href="http://sflan.stuzzgaming.com/songs/" class="btn">View list</a>
+		<?php echo $this->Html->link('Show list', array('controller' => 'songs', 'action' => 'index'), array('class' => 'btn btn-primary')); ?>
 	</div>
 </div>
 <?php

@@ -9,7 +9,7 @@ $nextSong = ($song['Song']['id'] +1);
 	</div>
 	<div class="span3" style="text-align: right;">
 		<a href="http://sflan.stuzzgaming.com/songs/edit/<?php echo $song['Song']['id']; ?>" class="btn btn-primary">Edit Song</a> 
-		<a href="http://sflan.stuzzgaming.com/songs/" class="btn primary">View list</a>
+		<?php echo $this->Html->link('View List', array('controller' => 'songs', 'action' => "index"), array('class="btn"')); ?>
 	</div>
 </div>
 <?php

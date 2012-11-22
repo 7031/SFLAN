@@ -43,6 +43,27 @@ $Theme = new ThemeFunctions;
 */ ?>
 
     <div class="main-container">
+    	<div class="row">
+    		<div class="span6">
+    			<h1>SFLAN</h1>
+    		</div>
+    		<div class="span6">
+    			<ul class="nav nav-pills pull-right">
+    				<li>
+    					<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 1)); ?>
+    				</li>
+    				<li>
+    					<?php echo $this->Html->link('Tables', array('controller' => 'pages', 'action' => 'view', 2)); ?>
+    				</li>
+    				<li>
+    					<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
+    				</li>
+    				<li>
+    					<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
 
 		<?php echo $this->Session->flash(); ?>
 		<?php echo $content_for_layout; ?>

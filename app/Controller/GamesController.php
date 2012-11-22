@@ -17,6 +17,7 @@ class GamesController extends AppController {
 	}
 	
 	public function view($id = null) {
+		require('../Vendor/markdown.php');
 		$this->Game->id = $id;
 		$this->set('game', $this->Game->read());
 	}

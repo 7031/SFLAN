@@ -3,7 +3,7 @@
 		<h1><?php echo h($game['Game']['name']); ?></h1>
 	</div>
 	<div class="span6" style="text-align: right; margin-top: 6px;">
-		<p><a href="http://sflan.stuzzgaming.com/games/edit/<?php echo $game['Game']['id']; ?>" class="btn"><i class="icon-pencil"></i> Edit</a></p>
+		<p><?php echo $this->Html->link('<i class="icon-pencil"></i> Edit', array('controller' => 'games', 'action' => 'edit', $game['Game']['id']), array('escape' => false, 'class' => 'btn')); ?></p>
 	</div>
 </div>
 <div class="row">
@@ -59,5 +59,5 @@
 </div>
 
 <h2>About <?php echo ($game['Game']['name']);?></h2>
-<?php echo ($game['Game']['description']); ?>
+<?php echo Markdown($game['Game']['description']); ?>
 
