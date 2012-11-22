@@ -3,6 +3,7 @@
 	<div class="span4">
 		<?php
 		echo $this->Form->create('Attendee');
+		echo $this->Form->input('id');
 		echo $this->Form->input('name', array('class' => 'span4', 'placeholder' => 'Name', 'label' => false));
 		echo $this->Form->input('nickname', array('class' => 'span4', 'placeholder' => 'Nickname', 'label' => false));
 		echo $this->Form->input('table', array('class' => 'span4', 'type' => 'select', 'options' => $tables, 'label' => false));

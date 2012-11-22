@@ -58,4 +58,19 @@ class AttendeesController extends AppController {
 			}
 		}
 	}
+
+	public function delete($id) {
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+		if ($this->Attendee->delete($id)) {
+			$this->Session->setFlash('
+				<div class="alert alert-success">
+					<button class="close" data-dismiss="alert">x</button>
+					Attendee has been deleted.
+				</div>
+			');
+			$this->redirect(array('action' => 'index'));
+		}
+	}
 }

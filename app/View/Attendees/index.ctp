@@ -28,6 +28,12 @@
 					</td>
 					<td>
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
+						<?php echo $this->Form->postLink(
+							'<i class="icon-remove black"></i>',
+							array('action' => 'delete', $attendee['Attendee']['id']),
+							array('confirm' => 'Are you sure?', 'escape' => false)
+						);
+						?>
 					</td>
 				</tr>
 			<?	
@@ -42,16 +48,26 @@
 			<thead>
 				<th>Name</th>
 				<th>Nickname</th>
+				<th></th>
 			</thead>
 			<?php 
 			foreach ($attendees as $attendee):
 			if ($attendee['Attendee']['table'] == 1) { ?>
 				<tr>
-					<td>
+					<td width="45%">
 						<?php echo $attendee['Attendee']['name']; ?>
 					</td>
-					<td>
+					<td width="45%">
 						<?php echo $attendee['Attendee']['nickname']; ?>
+					</td>
+					<td>
+						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
+						<?php echo $this->Form->postLink(
+							'<i class="icon-remove black"></i>',
+							array('action' => 'delete', $attendee['Attendee']['id']),
+							array('confirm' => 'Are you sure?', 'escape' => false)
+						);
+						?>
 					</td>
 				</tr>
 			<?	

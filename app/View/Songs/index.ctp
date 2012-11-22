@@ -20,7 +20,7 @@
 		<td><?php echo h($song['Song']['title']); ?></td>
 		<td><?php echo h($song['Song']['artist']); ?></tD>
 		<td><?php echo $this->Html->link('Listen', array('controller' => 'songs', 'action' => 'view', $song["Song"]["id"])); ?></td>
-		<td><?php echo $this->Html->link('<i class="icon-pencil">', array('controller' => 'songs', 'action' => 'edit', $song["Song"]["id"]), array('escape' => false)); ?></td>
+		<td><?php echo $this->Html->link('<i class="icon-pencil black">', array('controller' => 'songs', 'action' => 'edit', $song["Song"]["id"]), array('escape' => false)); ?></td>
 	</tr>
 	<?php endforeach; ?>
 </table>
