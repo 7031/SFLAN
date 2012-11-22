@@ -129,3 +129,17 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+ class ThemeFunctions {
+ 	public function getLess($style, $dir = null) {
+		$themedir = Router::url('/', true);
+		if ( $dir == null ) {
+			$css = ($themedir . 'css/' . $style . '.less');
+		} elseif ($dir == '/') {
+			$css = ($themedir . $style . '.less');
+		} else {
+			$css = ($themedir . $dir . '/' . $style . '.less');
+		}
+		$code = ('<link href="' . $css . '" rel="stylesheet" type="text/less">' . "\n");
+		return $code;
+	}
+}
