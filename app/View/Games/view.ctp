@@ -51,10 +51,18 @@
 					</td>
 				</tr>
 			</table>
-			<a href="<?php echo h($game['Game']['download']);?>" class="btn btn-primary btn-large" style="width: 94%">Download <?php echo h($game['Game']['name']);?></a>
+			<?php if (($game['Game']['download']) !== '') { ?>
+				<a href="<?php echo h($game['Game']['download']);?>" class="btn btn-primary btn-large btn-block">Download <?php echo h($game['Game']['name']);?></a>
+			<? }  else { ?>
+				<a href="#" class="btn btn-primary btn-large btn-block disabled">Download Not Available</a>
+			<? } ?>
 	</div>
 	<div class="span6">
-		<a href="<?php echo h($game['Game']['screenshot']); ?>" class="thumbnail"><img src="<?php echo h($game['Game']['screenshot']);?>"></a>
+		<?php if (($game['Game']['screenshot']) !== '') { ?>
+			<a href="<?php echo h($game['Game']['screenshot']); ?>" class="thumbnail"><img src="<?php echo h($game['Game']['screenshot']);?>"></a>
+		<?php } else { ?>
+			<a href="#" class="thumbnail"><img src="/img/not-available.jpg"></a>
+		<?php } ?>
 	</div>
 </div>
 

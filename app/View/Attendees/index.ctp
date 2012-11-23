@@ -17,8 +17,8 @@
 				<th></th>
 			</thead>
 			<?php 
-			foreach ($attendees as $attendee):
-			if ($attendee['Attendee']['table'] == 0) { ?>
+			foreach ($table0 as $attendee):
+			?>
 				<tr>
 					<td>
 						<?php echo h($attendee['Attendee']['name']); ?>
@@ -37,7 +37,6 @@
 					</td>
 				</tr>
 			<?	
-			}
 			endforeach;
 			?>
 		</table>
@@ -51,8 +50,8 @@
 				<th></th>
 			</thead>
 			<?php 
-			foreach ($attendees as $attendee):
-			if ($attendee['Attendee']['table'] == 1) { ?>
+			foreach ($table1 as $attendee):
+			?>
 				<tr>
 					<td>
 						<?php echo h($attendee['Attendee']['name']); ?>
@@ -71,7 +70,6 @@
 					</td>
 				</tr>
 			<?	
-			}
 			endforeach;
 			?>
 		</table>
@@ -87,8 +85,8 @@
 				<th></th>
 			</thead>
 			<?php
-			foreach ($attendees as $attendee) :
-			if ($attendee['Attendee']['table'] == 2) { ?>
+			foreach ($table2 as $attendee) :
+			?>
 				<tr>
 					<td>
 						<?php echo h($attendee['Attendee']['name']); ?>
@@ -107,7 +105,6 @@
 					</td>
 			</tr>
 			<?php 
-			}
 			endforeach;
 			?>
 		</table>

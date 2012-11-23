@@ -3,22 +3,22 @@ $Theme = new ThemeFunctions;
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <?php echo $this->Html->charset(); ?>
-    <title><?php echo $title_for_layout; ?> - SausageFest LAN</title>
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
-    <?php echo $Theme->getCss('bootstrap.min'); ?>
-    <?php echo $Theme->getLess('style'); ?>
-    <?php echo $Theme->getCss('font-awesome'); ?>
-    <!--[if IE 7]>
-		<link href="/css/font-awesome-ie7.css" rel="stylesheet">
-	<![endif]-->
-  </head>
+	<head>
+		<?php echo $this->Html->charset(); ?>
+		<title><?php echo $title_for_layout; ?> - SausageFest LAN</title>
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
+		<?php echo $Theme->getCss('bootstrap.min'); ?>
+		<?php echo $Theme->getLess('style'); ?>
+		<?php echo $Theme->getCss('font-awesome'); ?>
+		 <!--[if IE 7]>
+			<link href="/css/font-awesome-ie7.css" rel="stylesheet">
+		<![endif]-->
+	</head>
 
-  <body>
+	<body>
 <? /*
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -42,67 +42,89 @@ $Theme = new ThemeFunctions;
 </div></div>
 */ ?>
 
-    <div class="main-container">
-    	<div class="row">
-    		<div class="span6">
-    			<?php echo $this->Html->link('<h1 class="logo">SFLAN</h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
+		<div class="main-container">
+    		<div class="row">
+    			<div class="span6">
+    				<?php echo $this->Html->link('<h1 class="logo">SFLAN</h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
+    			</div>
+    			<div class="span6">
+    				<ul class="nav nav-pills pull-right">
+    					<li>
+    						<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
+    					</li>
+    					<li>
+    						<?php echo $this->Html->link('Attendees', array('controller' => 'attendees', 'action' => 'index')); ?>
+    					</li>
+    					<li>
+    						<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
+    					</li>
+    					<li>
+    						<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?>
+    					</li>
+    				</ul>
+    			</div>
     		</div>
-    		<div class="span6">
-    			<ul class="nav nav-pills pull-right">
-    				<li>
-    					<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
-    				</li>
-    				<li>
-    					<?php echo $this->Html->link('Attendees', array('controller' => 'attendees', 'action' => 'index')); ?>
-    				</li>
-    				<li>
-    					<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
-    				</li>
-    				<li>
-    					<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?>
-    				</li>
-    			</ul>
-    		</div>
-    	</div>
-		<hr class="head">
-		<?php echo $this->Session->flash(); ?>
-		<?php echo $content_for_layout; ?>
+			<hr class="head">
+			<?php echo $this->Session->flash(); ?>
+			<?php echo $content_for_layout; ?>
 
-		<hr>
-   
-		<footer>
-			<div class="row">
-				<div class="span6">
-					<p>
-						<?php echo $this->Html->link('Pages', array('controller' => 'pages', 'action' => 'index')); ?> | 
-						<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?> | 
-						<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
-					</p>
+			<hr>
+  	 
+			<footer>
+				<div class="row">
+					<div class="span6">
+						<p>
+							<?php echo $this->Html->link('Pages', array('controller' => 'pages', 'action' => 'index')); ?> | 
+							<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?> | 
+							<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="span6">
-					<p>Code is poetry</p>
+				<div class="row">
+					<div class="span6">
+						<p>Code is poetry</p>
+					</div>
+					<div class="span6" style="text-align: right;">
+						Site by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>. View source on <a href="https://github.com/7031/SFLAN">Github</a>.
+					</div>
 				</div>
-				<div class="span6" style="text-align: right;">
-					Site by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>. View source on <a href="https://github.com/7031/SFLAN">Github</a>.
-				</div>
-			</div>
 
-		</footer>
+			</footer>
 
-    </div>
+	    </div>
 
 
-	<?php 
-		echo $Theme->getJs('jquery');
-		echo $Theme->getJs('bootstrap.min');
-		echo $Theme->getJs('less');
-	?>
-	<script type="text/javascript">
-	$('body').tooltip({
-		selector: "[rel=tooltip]"
-	})
-	</script>
-  </body>
+		<?php 
+			echo $Theme->getJs('jquery');
+			echo $Theme->getJs('bootstrap.min');
+			echo $Theme->getJs('less');
+		?>
+		<script type="text/javascript">
+		$('body').tooltip({
+			selector: "[rel=tooltip]"
+		})
+		</script>
+		<script>
+			$('.thumb-lightbox').click(function(e) {
+				e.preventDefault();
+				var image_href = $(this).attr("href");
+				if ($('#lightbox').length > 0) {
+					$('#lbcontent').html('<img src="' + image_href + '">');
+					$('#lightbox').show();
+				} else {
+					var lightbox =
+					'<div id="lightbox">' +
+						'<p>Click anywhere to close</p>' +
+						'<div id="lbcontent">' +
+							'<img src="' + image_href + '" class="lbimage">' +
+						'</div>' +
+					'</div>';
+					$('body').append(lightbox);
+				}
+			});
+			$('#lightbox').live('click', function() {
+				$('#lightbox').hide();
+			});
+		</script>
+	</body>
 </html>

@@ -9,18 +9,17 @@
 </div>
 <table class="table table-bordered table-striped table-hover">
 	<thead>
-		<th width="45%">Title</th>
-		<th width="45%">Artist</th>
-		<th width="10%">Listen</th>
+		<th style="width: 45%">Title</th>
+		<th style="width: 45%">Artist</th>
+		<th style="width: 10%">Listen</th>
 		<th></th>
 	</thead>
-	
 	<?php foreach ($songs as $song): ?>
 	<tr>
 		<td><?php echo h($song['Song']['title']); ?></td>
 		<td><?php echo h($song['Song']['artist']); ?></tD>
 		<td><?php echo $this->Html->link('Listen', array('controller' => 'songs', 'action' => 'view', $song["Song"]["id"])); ?></td>
-		<td><?php echo $this->Html->link('<i class="icon-pencil black">', array('controller' => 'songs', 'action' => 'edit', $song["Song"]["id"]), array('escape' => false)); ?></td>
+		<td><?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'songs', 'action' => 'edit', $song["Song"]["id"]), array('escape' => false)); ?></td>
 	</tr>
 	<?php endforeach; ?>
 </table>

@@ -4,7 +4,9 @@ class AttendeesController extends AppController {
 	public $components = array('Session');
 	
 	public function index() {
-		$this->set('attendees', $this->Attendee->find('all'));
+		$this->set('table0', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 0))));
+		$this->set('table1', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 1))));
+		$this->set('table2', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 2))));
 	}
 	
 	public function add() {
