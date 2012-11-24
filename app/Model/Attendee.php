@@ -10,10 +10,13 @@ class Attendee extends AppModel {
 	
 	public $validate = array(
 		'name' => array(
-			'rule' => 'notEmpty'
+			'rule' => 'notEmpty',
+		),
+		'nickname' => array(
+			'rule' => 'notEmpty',
 		),
 		'table' => array(
-			'rule' => 'notEmpty'
+			'rule' => 'notEmpty',
 		)
 	);
 }

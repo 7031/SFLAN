@@ -26,7 +26,7 @@
 					<td>
 						<?php echo h($attendee['Attendee']['nickname']); ?>
 					</td>
-					<td>
+					<td class="right">
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
 						<?php echo $this->Form->postLink(
 							'<i class="icon-remove black"></i>',
@@ -59,7 +59,7 @@
 					<td>
 						<?php echo h($attendee['Attendee']['nickname']); ?>
 					</td>
-					<td>
+					<td class="right">
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
 						<?php echo $this->Form->postLink(
 							'<i class="icon-remove black"></i>',
@@ -77,7 +77,7 @@
 </div>
 <div class="row">
 	<div class="span12">
-		<h2>Non-existent Table</h2>
+		<h2>The Table at Nightgunner's house</h2>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
 				<th width="45%">Name</th>
@@ -94,7 +94,7 @@
 					<td>
 						<?php echo h($attendee['Attendee']['nickname']); ?>
 					</td>
-					<td>
+					<td class="right">
 						<?php echo $this->Html->link('<i class="icon-pencil black"></i>', array('controller' => 'attendees', 'action' => 'edit', $attendee['Attendee']['slug']), array('escape' => false)); ?>
 						<?php echo $this->Form->postLink(
 							'<i class="icon-remove black"></i>',

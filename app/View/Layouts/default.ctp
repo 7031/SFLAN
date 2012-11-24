@@ -11,7 +11,7 @@ $Theme = new ThemeFunctions;
 		<![endif]-->
 		<?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
 		<?php echo $Theme->getCss('bootstrap.min'); ?>
-		<?php echo $Theme->getLess('style'); ?>
+		<?php echo $Theme->getCss('style'); ?>
 		<?php echo $Theme->getCss('font-awesome'); ?>
 		 <!--[if IE 7]>
 			<link href="/css/font-awesome-ie7.css" rel="stylesheet">
@@ -45,7 +45,7 @@ $Theme = new ThemeFunctions;
 		<div class="main-container">
     		<div class="row">
     			<div class="span6">
-    				<?php echo $this->Html->link('<h1 class="logo">SFLAN</h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
+    				<?php echo $this->Html->link('<h1 class="logo">SFLAN <small>21.12.2012</small></h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
     			</div>
     			<div class="span6">
     				<ul class="nav nav-pills pull-right">

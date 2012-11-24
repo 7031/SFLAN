@@ -47,6 +47,7 @@
 	Router::connect('/music/edit/*', array('controller' => 'songs', 'action' => 'edit'));
 	Router::connect('/music/play', array('controller' => 'songs', 'action' => 'play'));
 	Router::connect('/music/listen/*', array('controller' => 'songs', 'action' => 'view')); 
+	Router::connect('/music/*', array('controller' => 'songs', 'action' => 'index'));
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on 

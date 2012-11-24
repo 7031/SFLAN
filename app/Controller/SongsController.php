@@ -12,9 +12,14 @@ class SongsController extends AppController {
 		)
 	);
 	
-	public function index(){
-		$data = $this->paginate('Song');
-		$this->set('songs', $data);
+	public function index($artist = null){
+		if ($artist !== null) {
+			$data = $this->paginate('Song');
+			$this->set('songs', $data);
+		} else {
+			$data = $this->paginate('Song');
+			$this->set('songs', $data);
+		}
 	}
 	
 	public function view($id = null) {
