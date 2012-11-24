@@ -48,6 +48,22 @@ $Theme = new ThemeFunctions;
     				<?php echo $this->Html->link('<h1 class="logo">SFLAN <small>21.12.2012</small></h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
     			</div>
     			<div class="span6">
+    				<div class="right">
+        				<?php if ($authUser) {
+							echo 'Logged in as ';
+    						echo $authUser['username'];
+							echo '. ';
+							echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'));
+							echo '.';
+    					} else {
+    						echo 'Not logged in. ';
+							echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'));
+							echo ' / ';
+							echo $this->Html->link('Register', array('controller' => 'users', 'action' => 'register'));
+							echo '.';
+    					}
+    					?>
+    				</div>
     				<ul class="nav nav-pills pull-right">
     					<li>
     						<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
