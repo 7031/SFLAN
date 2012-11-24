@@ -46,7 +46,7 @@ parse_str( parse_url($url, PHP_URL_QUERY ), $urlarray);
 
     function onPlayerStateChange(event) {        
         if(event.data === 0) {          
-			window.location = "http://sflan.stuzzgaming.com/songs/play"
+			window.location = "<?php echo $this->webroot; ?>music/play"
         }
     }
 

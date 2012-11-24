@@ -45,7 +45,7 @@
 	Router::connect('/music', array('controller' => 'songs', 'action' => 'index'));
 	Router::connect('/music/add', array('controller' => 'songs', 'action' => 'add'));
 	Router::connect('/music/edit/*', array('controller' => 'songs', 'action' => 'edit'));
-	Router::connect('/music/play', array('controller' => 'songs', 'action' => 'play'));
+	Router::connect('/music/play/*', array('controller' => 'songs', 'action' => 'play'));
 	Router::connect('/music/listen/*', array('controller' => 'songs', 'action' => 'view')); 
 	Router::connect('/music/*', array('controller' => 'songs', 'action' => 'index'));
 

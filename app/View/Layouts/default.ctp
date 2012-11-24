@@ -5,7 +5,7 @@ $Theme = new ThemeFunctions;
 <html lang="en">
 	<head>
 		<?php echo $this->Html->charset(); ?>
-		<title><?php echo $title_for_layout; ?> - SausageFest LAN</title>
+		<title><?php echo $title_for_layout; ?> - SFLAN</title>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->

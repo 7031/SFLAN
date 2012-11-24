@@ -61,12 +61,21 @@ class SongsController extends AppController {
 		)
 	);
 	
-	public function play($id = null) {
-		$this->set('songs', $this->Song->find('all'));
-		$number = $this->Song->find('count');
-		$play = rand(1, $number);
-		$this->Song->id = $play;
-		$this->set('song', $this->Song->read());
+	public function play($view = null, $id = null) {
+		if ($view == 'full') {
+			$this->set('songs', $this->Song->find('all'));
+			$number = $this->Song->find('count');
+			$play = rand(1, $number);
+			$this->Song->id = $play;
+			$this->set('song', $this->Song->read());
+			$this->layout = 'full';
+			$this->render('play-full');
+		} else {
+			$this->set('songs', $this->Song->find('all'));
+			$number = $this->Song->find('count');
+			$play = rand(1, $number);
+			$this->Song->id = $play;
+			$this->set('song', $this->Song->read());
+		}
 	}
-	
 }

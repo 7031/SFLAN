@@ -38,7 +38,6 @@ parse_str( parse_url($url, PHP_URL_QUERY ), $urlarray);
 	function onPlayerError(errorCode) {
 	}
 	
-
     function onPlayerStateChange(event) {        
         if(event.data === 0) {          
             window.location.reload();
