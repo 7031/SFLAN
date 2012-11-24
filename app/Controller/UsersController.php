@@ -2,7 +2,8 @@
 class UsersController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
-
+		$this->Auth->allow('login', 'register');
+		$this->Auth->deny('index');
 	}
 	
 	public function index() {
@@ -31,6 +32,10 @@ class UsersController extends AppController {
 	}
 	
 	public function register() {
+		$authUser = $this->Auth->user();
+		if ($authUser) {
+			$this->redirect(array('action' => 'index'));
+		}
 		if ($this->request->is('post')) {
 			if (!$this->User->findByUsername($this->data['User']['username'])) {
 				$this->User->create();
@@ -95,6 +100,10 @@ class UsersController extends AppController {
 	}
 	
 	public function login() {
+		$authUser = $this->Auth->user();
+		if ($authUser) {
+			$this->redirect(array('action' => 'index'));
+		}
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()){
 				$this->redirect($this->Auth->redirect());
