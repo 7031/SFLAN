@@ -49,7 +49,8 @@ $Theme = new ThemeFunctions;
     			</div>
     			<div class="span6">
     				<div class="right">
-        				<?php if ($authUser) {
+        				<?php 
+        				if ($authUser) {
 							echo 'Logged in as ';
     						echo $authUser['username'];
 							echo '. ';

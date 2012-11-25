@@ -30,10 +30,20 @@ class SongsController extends AppController {
 	public function add() {
 		if ($this->request->is('post')) {
 			if ($this->Song->save($this->request->data)) {
-				$this->Session->setFlash('<div class="alert alert-success"><button class="close" data-dismiss="alert">x</button><strong>Success!</strong> Your song has been added.</div>');
+				$this->Session->setFlash('
+					<div class="alert alert-success">
+						<button class="close" data-dismiss="alert">&times;</button>
+						<strong>Success!</strong> Your song has been added.
+					</div>'
+				);
 				$this->redirect(array('action' => 'index'));
 				} else {
-					$this->Session->setFlash('<div class="alert alert-error"><button class="close" data-dismiss="alert">x</button><strong>Error:</strong> Unable to add your song.</div>');
+					$this->Session->setFlash('
+						<div class="alert alert-error">
+							<button class="close" data-dismiss="alert">&times;</button>
+							<strong>Error:</strong> Unable to add your song.
+						</div>
+					');
 				}
 		}
 	}
@@ -44,10 +54,20 @@ class SongsController extends AppController {
 			$this->request->data = $this->Song->read();
 		} else {
 			if ($this->Song->save($this->request->data)) {
-				$this->Session->setFlash('<div class="alert alert-success"><button class="close" data-dismiss="alert">x</button><strong>Success!</strong> Your song has been updated</div>');
+				$this->Session->setFlash('
+					<div class="alert alert-success">
+						<button class="close" data-dismiss="alert">&times;</button>
+						<strong>Success!</strong> Your song has been updated
+					</div>
+				');
 				$this->redirect(array('action' => 'view', $id));	
 			} else {
-				$this->Session->setFlash('<div class="alert alert-error"><button class="close" data-dismiss="alert">x</button><strong>Error:</strong> Unable to update the song.</div>');
+				$this->Session->setFlash('
+					<div class="alert alert-error">
+						<button class="close" data-dismiss="alert">&times;</button>
+						<strong>Error:</strong> Unable to update the song.
+					</div>
+				');
 			}
 		}
 	}
@@ -68,7 +88,7 @@ class SongsController extends AppController {
 			$play = rand(1, $number);
 			$this->Song->id = $play;
 			$this->set('song', $this->Song->read());
-			$this->layout = 'full';
+			$this->layout = 'full'; 
 			$this->render('play-full');
 		} else {
 			$this->set('songs', $this->Song->find('all'));
