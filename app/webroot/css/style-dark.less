@@ -1,0 +1,95 @@
+/* Variables */
+@main-font: 'Mako';
+@container-width: 940px;
+
+/* Mix-ins */
+.main-shadow {
+  @main-shadow: 0px 3px 36px 6px #000;
+  -webkit-box-shadow: @main-shadow;
+  -moz-box-shadow: @main-shadow;
+  box-shadow: @main-shadow;
+}
+
+.rounded-corners {
+  @border-radius: 5px;
+  -webkit-border-radius:  @border-radius;
+  -moz-border-radius:     @border-radius;
+  border-radius:          @border-radius;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.black {
+  color: #888;
+}
+
+
+/* Primary Elements */
+body {
+  font-family: @main-font, sans-serif;
+  background-color: #888;
+  background-image: url('../img/robots.png');
+  background-repeat: repeat;
+}
+
+h1 {
+  font-family: @main-font;
+  font-size: 24pt;
+  font-weight: 700;
+}
+
+
+hr.head {
+  margin-bottom: 6px;
+  margin-top: 0;
+}
+
+footer {
+  font-size: 10pt;
+}
+
+a {
+  h1 {
+    color: #fff;
+  }
+}
+a:hover {
+  .logo {
+    text-decoration: none;
+  }
+  i {
+    text-decoration: none;
+  }
+}
+
+input, input.span12, input.span11, input.span10, input.span9, input.span8, input.span7, input.span6, input.span5, input.span4, input.span3, input.span2, input.span1, textarea, textarea.span12, textarea.span11, textarea.span10, textarea.span9, textarea.span8, textarea.span7, textarea.span6, textarea.span5, textarea.span4, textarea.span3, textarea.span2, textarea.span1 {
+  color: #fff;
+  background-color: #050505;
+}
+
+/* Classes */
+.main-container {
+  width: @container-width;
+  margin: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  background-color: #121212;
+  .main-shadow;
+  .rounded-corners;
+}
+.logo {
+  margin: 0;
+  padding: 0;
+}
+

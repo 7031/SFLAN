@@ -16,7 +16,7 @@
 	<?php foreach ($games as $game): ?>
 	<tr>
 		<td>
-			<?php echo $this->Html->link($game['Game']['name'], array('controller' => 'games', 'action' => 'view', $game['Game']['id'])); ?>
+			<?php echo $this->Html->link($game['Game']['name'], array('controller' => 'games', 'action' => 'view', $game['Game']['slug'])); ?>
 		</td>
 		<td><?php echo h($game['Game']['filesize']); ?></td>
 	</tr>

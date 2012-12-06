@@ -4,7 +4,7 @@ class GamesController extends AppController {
 	public $components = array('Session');
 	
 	var $paginate = array (
-		'fields' => array('Game.id', 'Game.name', 'Game.filesize'),
+		'fields' => array('Game.id', 'Game.name', 'Game.filesize', 'Game.slug'),
 		'limit' => 2000,
 		'order' => array(
 			'Game.name' => 'asc'
@@ -16,10 +16,10 @@ class GamesController extends AppController {
 		$this->set('games', $data);
 	}
 	
-	public function view($id = null) {
+	public function view($permalink = null) {
 		require('../Vendor/markdown.php');
-		$this->Game->id = $id;
-		$this->set('game', $this->Game->read());
+		$game = $this->Game->findBySlug($permalink);
+		$this->set('game', $game);
 	}
 	
 	public function add() {
@@ -33,14 +33,14 @@ class GamesController extends AppController {
 		}
 	}
 	
-	public function edit($id = null) {
-		$this->Game->id = $id;
+	public function edit($permalink = null) {
+		$game = $this->Game->findBySlug($permalink);
 		if ($this->request->is('get')) {
-			$this->request->data = $this->Game->read();
+			$this->request->data = $game;
 		} else {
 			if ($this->Game->save($this->request->data)) {
 				$this->Session->setFlash('<div class="alert alert-success"><button class="close" data-dismiss="alert">x</button>Your game has been updated</div>');
-				$this->redirect(array('action' => 'view', $id));	
+				$this->redirect(array('action' => 'view', $permalink));	
 			} else {
 				$this->Session->setFlash('<div class="alert alert-error"><button class="close" data-dismiss="alert">x</button>Unable to update the game.</div>');
 			}

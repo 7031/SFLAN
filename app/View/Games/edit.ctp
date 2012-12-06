@@ -32,6 +32,6 @@ echo $this->Form->input('description', array('class' => 'span12', 'rows' => '15'
 	</div>
 </div>
 <?
-
+echo $this->Form->input('id', array('type' => 'hidden'));
 echo $this->Form->button('Save Page', array('type' => 'submit', 'class' => 'btn btn-primary'));
 ?>
