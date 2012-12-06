@@ -10,8 +10,15 @@ $Theme = new ThemeFunctions;
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
-		<?php echo $Theme->getCss('cyborg.min'); ?>
-		<?php echo $Theme->getLess('style-dark'); ?>
+		<?php 
+		if ($style == 'dark') {
+			echo $Theme->getCss('cyborg.min');
+			echo $Theme->getLess('style-dark');
+		} elseif ($style == 'light') {
+			echo $Theme->getCss('bootstrap.min');
+			echo $Theme->getLess('style');	
+		}
+		 ?>
 		<?php echo $Theme->getCss('font-awesome'); ?>
 		 <!--[if IE 7]>
 			<link href="/css/font-awesome-ie7.css" rel="stylesheet">
@@ -45,7 +52,7 @@ $Theme = new ThemeFunctions;
 		<div class="main-container">
     		<div class="row">
     			<div class="span6">
-    				<?php echo $this->Html->link('<h1 class="logo">SFLAN <small>21.12.2012</small></h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
+    				<?php echo $this->Html->Link('<h1 class="logo">SFLAN <small>21.12.2012</small></h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
     			</div>
     			<div class="span6">
     				<div class="right">
@@ -54,29 +61,36 @@ $Theme = new ThemeFunctions;
 							echo 'Logged in as ';
     						echo $authUser['username'];
 							echo '. ';
-							echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'));
+							echo $this->Html->Link('Logout', array('controller' => 'users', 'action' => 'logout'));
 							echo '.';
     					} else {
     						echo 'Not logged in. ';
-							echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'));
+							echo $this->Html->Link('Login', array('controller' => 'users', 'action' => 'login'));
 							echo ' / ';
-							echo $this->Html->link('Register', array('controller' => 'users', 'action' => 'register'));
+							echo $this->Html->Link('Register', array('controller' => 'users', 'action' => 'register'));
 							echo '.';
     					}
+						echo ' ';
+						if ($style == 'dark') {
+							echo $this->Html->Link('Light', array('controller' => 'app', 'action' => 'changestyle', 'light'));
+						} elseif ($style == 'light') {
+							echo $this->Html->Link('Dark', array('controller' => 'app', 'action' => 'changestyle', 'dark'));
+						}
+						echo '.';
     					?>
     				</div>
     				<ul class="nav nav-pills pull-right">
     					<li>
-    						<?php echo $this->Html->link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
+    						<?php echo $this->Html->Link('Home', array('controller' => 'pages', 'action' => 'view', 'welcome')); ?>
     					</li>
     					<li>
-    						<?php echo $this->Html->link('Attendees', array('controller' => 'attendees', 'action' => 'index')); ?>
+    						<?php echo $this->Html->Link('Attendees', array('controller' => 'attendees', 'action' => 'index')); ?>
     					</li>
     					<li>
-    						<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
+    						<?php echo $this->Html->Link('Games', array('controller' => 'games', 'action' => 'index')); ?>
     					</li>
     					<li>
-    						<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?>
+    						<?php echo $this->Html->Link('Music', array('controller' => 'songs', 'action' => 'index')); ?>
     					</li>
     				</ul>
     			</div>
@@ -91,9 +105,9 @@ $Theme = new ThemeFunctions;
 				<div class="row">
 					<div class="span6">
 						<p>
-							<?php echo $this->Html->link('Pages', array('controller' => 'pages', 'action' => 'index')); ?> | 
-							<?php echo $this->Html->link('Music', array('controller' => 'songs', 'action' => 'index')); ?> | 
-							<?php echo $this->Html->link('Games', array('controller' => 'games', 'action' => 'index')); ?>
+							<?php echo $this->Html->Link('Pages', array('controller' => 'pages', 'action' => 'index')); ?> | 
+							<?php echo $this->Html->Link('Music', array('controller' => 'songs', 'action' => 'index')); ?> | 
+							<?php echo $this->Html->Link('Games', array('controller' => 'games', 'action' => 'index')); ?>
 						</p>
 					</div>
 				</div>
