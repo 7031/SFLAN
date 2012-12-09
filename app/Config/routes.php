@@ -29,6 +29,10 @@
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
+ 
+ 	// Settings
+ 	Router::connect('/app/style/*', array('controller' => 'app', 'action' => 'changestyle'));
+
 	// Pages
  	Router::connect('/pages', array('controller' => 'pages', 'action' => 'index'));
 	Router::connect('/pages/add', array('controller' => 'pages', 'action' => 'add'));

@@ -12,8 +12,8 @@
 		<h2>Table #1</h2>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
-				<th width="45%">Name</th>
-				<th width="45%">Nickname</th>
+				<th width="44%">Name</th>
+				<th width="44%">Nickname</th>
 				<th></th>
 			</thead>
 			<?php 
@@ -45,8 +45,8 @@
 		<h2>Table #2</h2>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
-				<th width="45%">Name</th>
-				<th width="45%">Nickname</th>
+				<th width="44%">Name</th>
+				<th width="44%">Nickname</th>
 				<th></th>
 			</thead>
 			<?php 
@@ -80,8 +80,8 @@
 		<h2>The Table at Nightgunner's house</h2>
 		<table class="table table-bordered table-striped table-hover">
 			<thead>
-				<th width="45%">Name</th>
-				<th width="45%">Nickname</th>
+				<th width="44%">Name</th>
+				<th width="44%">Nickname</th>
 				<th></th>
 			</thead>
 			<?php
