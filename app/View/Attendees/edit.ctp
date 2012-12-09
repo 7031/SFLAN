@@ -6,6 +6,9 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name', array('class' => 'span4', 'placeholder' => 'Name', 'label' => false));
 		echo $this->Form->input('nickname', array('class' => 'span4', 'placeholder' => 'Nickname', 'label' => false));
+		if ($authUser) {
+			echo $this->Form->input('mac', array('class' => 'span4', 'placeholder' => 'MAC Address', 'label' => false));
+		}
 		echo $this->Form->input('table', array('class' => 'span4', 'type' => 'select', 'options' => $tables, 'label' => false));
 		echo $this->Form->button('Edit Attendee', array('type' => 'submit', 'class' => 'btn btn-primary'));
 		?>
@@ -17,6 +20,15 @@
 		<p style="padding-top: 10px;">
 			Nickname
 		</p>
+		<?php
+		if ($authUser) {
+			echo ('
+				<p style="padding-top: 10px;">
+					Geeks: Type their MAC address
+				</p>
+			');
+		}
+		?>
 		<p style="padding-top: 10px;">
 			Table number
 		</p>
