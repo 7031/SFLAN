@@ -1,4 +1,7 @@
-[class^="icon-"],
+package css
+
+// wait what
+const AwesomeIE7 = `[class^="icon-"],
 [class*=" icon-"] {
   font-family: FontAwesome;
   font-style: normal;
@@ -642,4 +645,4 @@
 }
 .icon-user-md {
   *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf200;&nbsp;');
-}
+}`

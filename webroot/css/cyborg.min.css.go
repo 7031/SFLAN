@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
+package css
+
+const Cyborg = `@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
 audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
 audio:not([controls]){display:none;}
@@ -928,4 +930,4 @@ input[type="file"]:focus,input[type="radio"]:focus,input[type="checkbox"]:focus,
 .hide{display:none;}
 .show{display:block;}
 .invisible{visibility:hidden;}
-.affix{position:fixed;}
+.affix{position:fixed;}`

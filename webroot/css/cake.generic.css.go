@@ -1,4 +1,6 @@
-@charset "utf-8";
+package css
+
+const Cake = `@charset "utf-8";
 /**
  *
  * Generic CSS for CakePHP
@@ -737,3 +739,4 @@ pre {
 #url-rewriting-warning {
 	display:none;
 }
+`

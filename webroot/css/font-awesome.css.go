@@ -1,4 +1,6 @@
-/*  Font Awesome
+package css
+
+const Awesome = `/*  Font Awesome
     the iconic font designed for use with Twitter Bootstrap
     -------------------------------------------------------
     The full suite of pictographic icons, examples, and documentation
@@ -300,4 +302,4 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-umbrella:before             { content: "\f0e9"; }
 .icon-paste:before                { content: "\f0ea"; }
 
-.icon-user-md:before              { content: "\f200"; }
+.icon-user-md:before              { content: "\f200"; }`
