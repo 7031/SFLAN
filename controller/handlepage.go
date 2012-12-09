@@ -14,7 +14,8 @@ var (
 
 func HandlePage(w http.ResponseWriter, r *http.Request, f func() (string, string)) {
 	var cache *http2.ResponseCache
-	switch Style(w, r) {
+	style := Style(w, r)
+	switch style {
 	case "light":
 		cache = &light
 	case "dark":
@@ -34,9 +35,11 @@ func HandlePage(w http.ResponseWriter, r *http.Request, f func() (string, string
 		w.Write([]byte(` - SFLAN</title>
 	<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<link href="http://fonts.googleapis.com/css?family=Mako" rel="stylesheet" type="text/css">
-	<link href="http://sflan.joelnichols.co.uk/css/cyborg.min.css" rel="stylesheet" type="text/css">
-	<link href="http://sflan.joelnichols.co.uk/css/style-dark.less" rel="stylesheet" type="text/less">
-	<link href="http://sflan.joelnichols.co.uk/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/css/cyborg.min.css" rel="stylesheet" type="text/css">
+	<link href="/css/style-`))
+		w.Write([]byte(style))
+		w.Write([]byte(`.css" rel="stylesheet" type="text/css">
+	<link href="/css/font-awesome.css" rel="stylesheet" type="text/css">
 	<!--[if IE 7]><link href="/css/font-awesome-ie7.css" rel="stylesheet"><![endif]-->
 </head>
 <body>

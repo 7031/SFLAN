@@ -10,7 +10,7 @@ func init() {
 	var (
 		cache http2.ResponseCache
 		files = map[string][]byte{
-			"/font/fontawesome-webfont.eof":  Eof,
+			"/font/fontawesome-webfont.eot":  Eot,
 			"/font/fontawesome-webfont.svg":  Svg,
 			"/font/fontawesome-webfont.ttf":  Ttf,
 			"/font/fontawesome-webfont.woff": Woff,
