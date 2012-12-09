@@ -52,7 +52,7 @@ $Theme = new ThemeFunctions;
 		<div class="main-container">
     		<div class="row">
     			<div class="span6">
-    				<?php echo $this->Html->Link('<h1 class="logo">SFLAN <small>21.12.2012</small></h1>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?>
+    				<h1 class="logo"><?php echo $this->Html->Link('SFLAN <small>21.12.2012</small>', array('controller' => 'pages', 'action' => 'view', 'welcome'), array('escape' => false)); ?></h1>
     			</div>
     			<div class="span6">
     				<div class="right">

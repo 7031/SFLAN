@@ -85,7 +85,7 @@ class SongsController extends AppController {
 		if ($view == 'full') {
 			$this->set('songs', $this->Song->find('all'));
 			$number = $this->Song->find('count');
-			$play = rand(1, $number);
+			$play = mt_rand(1, $number);
 			$this->Song->id = $play;
 			$this->set('song', $this->Song->read());
 			$this->layout = 'full'; 
@@ -93,7 +93,7 @@ class SongsController extends AppController {
 		} else {
 			$this->set('songs', $this->Song->find('all'));
 			$number = $this->Song->find('count');
-			$play = rand(1, $number);
+			$play = mt_rand(1, $number);
 			$this->Song->id = $play;
 			$this->set('song', $this->Song->read());
 		}
