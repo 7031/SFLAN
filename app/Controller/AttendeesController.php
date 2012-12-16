@@ -3,10 +3,17 @@ class AttendeesController extends AppController {
 	public $helpers = array('Html', 'Form');
 	public $components = array('Session');
 	
+	var $paginate = array(
+		'limit' => 25,
+		'order' => array(
+			'Attendee.name' => 'asc'
+		)
+	);
+	
 	public function index() {
-		$this->set('table0', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 0))));
-		$this->set('table1', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 1))));
-		$this->set('table2', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 2))));
+		$this->set('table0', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 0), 'order' => array('name ASC'), 'fields' => array('name', 'slug', 'nickname'))));
+		$this->set('table1', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 1), 'order' => array('name ASC'), 'fields' => array('name', 'slug', 'nickname'))));
+		$this->set('table2', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 2), 'order' => array('name ASC'), 'fields' => array('name', 'slug', 'nickname'))));
 	}
 	
 	public function add() {

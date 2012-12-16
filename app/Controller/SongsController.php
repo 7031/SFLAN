@@ -13,6 +13,8 @@ class SongsController extends AppController {
 	);
 	
 	public function index($artist = null){
+		$number = $this->Song->find('count');
+		$this->set('count', $number);
 		if ($artist !== null) {
 			$data = $this->paginate('Song');
 			$this->set('songs', $data);

@@ -2,11 +2,12 @@
 	<div class="span6">
 		<h1>Music</h1>
 	</div>
-	<div class="span6" style="text-align: right;">
+	<div class="span6" style="text-align: right; margin-top: 14px;">
 	<?php echo $this->Html->link('Play all', array('controller' => 'songs', 'action' => 'play'), array('class' => 'btn')); ?>
 	<?php echo $this->Html->link('Add Song', array('controller' => 'songs', 'action' => 'add'), array('class' => 'btn btn-primary')); ?>
 	</div>
 </div>
+<p>There are currently <?php echo $count; ?> songs.</p>
 <table class="table table-bordered table-striped table-hover">
 	<thead>
 		<th style="width: 45%">Title</th>
