@@ -11,9 +11,9 @@ class AttendeesController extends AppController {
 	);
 	
 	public function index() {
-		$this->set('table0', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 0), 'order' => array('name ASC'), 'fields' => array('name', 'slug', 'nickname'))));
-		$this->set('table1', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 1), 'order' => array('name ASC'), 'fields' => array('name', 'slug', 'nickname'))));
-		$this->set('table2', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 2), 'order' => array('name ASC'), 'fields' => array('name', 'slug', 'nickname'))));
+		$this->set('table0', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 0), 'order' => array('name ASC'), 'fields' => array('id', 'name', 'slug', 'nickname'))));
+		$this->set('table1', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 1), 'order' => array('name ASC'), 'fields' => array('id', 'name', 'slug', 'nickname'))));
+		$this->set('table2', $this->Attendee->find('all', array('conditions' => array('Attendee.table' => 2), 'order' => array('name ASC'), 'fields' => array('id', 'name', 'slug', 'nickname'))));
 	}
 	
 	public function add() {
