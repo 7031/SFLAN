@@ -116,7 +116,7 @@ $Theme = new ThemeFunctions;
 						<p>Code is poetry</p>
 					</div>
 					<div class="span6" style="text-align: right;">
-						Site by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>. View source on <a href="https://github.com/7031/SFLAN">Github</a>.
+						SFLAN by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>. View source on <a href="https://github.com/7031/SFLAN">Github</a>.
 					</div>
 				</div>
 
