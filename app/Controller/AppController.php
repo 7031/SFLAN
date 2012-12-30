@@ -48,20 +48,19 @@ class AppController extends Controller {
 	function beforeFilter() {
 		$this->Auth->allow('*');
 		$this->set('authUser', $this->Auth->user());
+		
+		/* Styles */
 		$this->Cookie->name = 'style';
-		$this->Cookie->time = (3600*24*30);
+		$this->Cookie->time = (3600 * 24 * 30);
 		$this->Cookie->path = '/';
 		$this->Cookie->domain = $_SERVER['HTTP_HOST'];
+		$this->Cookie->secure = false;
 		$style = $this->Cookie->read('style');
-		if ($style == '') {
-			$this->Cookie->write('style', 'dark');
-			$style = $this->Cookie->read('style');
-		}
-		$this->set('style', $this->Cookie->read('style'));
+		$this->set('style', $style);
 	}
 	
 	public function changestyle($newTheme = null) {
-		$this->Cookie->write('style', $newTheme);
+		$this->Cookie->write('style', $newTheme, false);
 		$this->redirect($_SERVER['HTTP_REFERER']);
 	}
 }

@@ -11,12 +11,12 @@ $Theme = new ThemeFunctions;
 		<![endif]-->
 		<?php echo $Theme->getCss('http://fonts.googleapis.com/css?family=Mako', null, true); ?>
 		<?php 
-		if ($style == 'dark') {
-			echo $Theme->getCss('cyborg.min');
-			echo $Theme->getLess('style-dark');
-		} elseif ($style == 'light') {
+		if ($style == 'light') {
 			echo $Theme->getCss('bootstrap.min');
 			echo $Theme->getLess('style');	
+		} else {
+			echo $Theme->getCss('cyborg.min');
+			echo $Theme->getLess('style-dark');
 		}
 		 ?>
 		<?php echo $Theme->getCss('font-awesome'); ?>
@@ -71,10 +71,10 @@ $Theme = new ThemeFunctions;
 							echo '.';
     					}
 						echo ' ';
-						if ($style == 'dark') {
-							echo $this->Html->Link('Light', array('controller' => 'app', 'action' => 'changestyle', 'light'));
-						} elseif ($style == 'light') {
+						if ($style == 'light') {
 							echo $this->Html->Link('Dark', array('controller' => 'app', 'action' => 'changestyle', 'dark'));
+						} else {
+							echo $this->Html->Link('Light', array('controller' => 'app', 'action' => 'changestyle', 'light'));
 						}
 						echo '.';
     					?>

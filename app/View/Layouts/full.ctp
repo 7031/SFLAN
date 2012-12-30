@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo $title_for_layout; ?> - SFLAN</title>
+		<title><?php echo $song['Song']['title']; ?> by <?php echo $song['Song']['artist']; ?> - SFLAN</title>
 		<style type="text/css">
 			html {
 				margin: 0;

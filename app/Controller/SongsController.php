@@ -92,6 +92,7 @@ class SongsController extends AppController {
 			$this->set('song', $this->Song->read());
 			$this->layout = 'full'; 
 			$this->render('play-full');
+
 		} else {
 			$this->set('songs', $this->Song->find('all'));
 			$number = $this->Song->find('count');
