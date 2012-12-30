@@ -5,17 +5,18 @@ This is the script in use for the SausageFest LAN party site at http://sflan.joe
 Installation
 -------------
 Getting SFLAN up and running isn't overly difficult, but I'm assuming some basic knowledge here.
-1. Upload the script in its entirety to your web server.
-2. Create the following folders:
+
+1.  Upload the script in its entirety to your web server.
+2.  Create the following folders:
 tmp
 tmp/cache
 tmp/cache/models
 tmp/cache/persistent
 tmp/log
 Make sure that these folders are writable by your web server.
-3. Rename app/Config/database.php.default to database.php and add in your database information
-4. Import sflan.sql to your database, phpMyAdmin works well for this.
-5. Edit app/Config/core.php replacing Security.salt and Security.cipherSeed with your own unique values.
+3.  Rename app/Config/database.php.default to database.php and add in your database information
+4.  Import sflan.sql to your database, phpMyAdmin works well for this.
+5.  Edit app/Config/core.php replacing Security.salt and Security.cipherSeed with your own unique values.
 
 Once all this is done you should be ready to go. 
 
