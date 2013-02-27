@@ -119,7 +119,13 @@ $Theme = new ThemeFunctions;
 						SFLAN by <a href="http://www.joelnichols.co.uk">Joel Nichols</a>. View source on <a href="https://github.com/7031/SFLAN">Github</a>.
 					</div>
 				</div>
-
+				<?php if($authUser['role'] == 2) { ?>
+				<div class="row">
+					<div class="span12">
+						<p class="center">Logged in as an administrator. <?php echo $this->Html->Link('List Users', array('controller' => 'users', 'action' => 'index')); ?></p>
+					</div>
+				</div>
+				<?php } ?>
 			</footer>
 
 	    </div>
