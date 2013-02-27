@@ -78,8 +78,8 @@ class AttendeesController extends AppController {
 		if ($this->Attendee->delete($id)) {
 			$this->Session->setFlash('
 				<div class="alert alert-success">
-					<button class="close" data-dismiss="alert">x</button>
-					Attendee has been deleted.
+					<button class="close" data-dismiss="alert">&times;</button>
+					The attendee has been deleted successfully. 
 				</div>
 			');
 			$this->redirect(array('action' => 'index'));

@@ -46,6 +46,22 @@ class GamesController extends AppController {
 			}
 		}
 	}
+	
+	public function delete($permalink) {
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+		$game = $this->Game->findBySlug($permalink);
+		if ($this->Game->delete($game)) {
+			$this->Session->setFlash('
+				<div class="alert alert-success">
+					<button class="close" data-dismiss="alert">&times;</button>
+					The game was deleted successfully.
+				</div>
+			');
+			$this->redirect(array('action' => 'index'));
+		}
+	}
 }
 
 ?>

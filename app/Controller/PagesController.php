@@ -38,4 +38,19 @@ class PagesController extends AppController {
 			}
 		}
 	}
+	
+	public function delete($permalink) {
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+		$page = $this->Page->findBySlug($permalink);
+		if ($this->Page->delete($page)) {
+			$this->Session->setFlash('
+				<div class="alert alert-success">
+					<button class="close" data-dismiss="alert">&times;</button>
+					The page was deleted successfully.
+				</div>
+			');
+		}
+	}
 }

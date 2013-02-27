@@ -73,6 +73,20 @@ class SongsController extends AppController {
 			}
 		}
 	}
+
+	public function delete($id) {
+		if ($this->request->is('get')) {
+			throw new MethodNotAllowedException();
+		}
+		if ($this->Song->delete($id)) {
+			$this->Session->setFlash('
+				<div class="alert alert-success">
+					<button class="close" data-dismiss="alert">&times;</button>
+					The song has been deleted successfully. 
+				</div>
+			');
+		}
+	}
 	
 	var $play = array (
 		'fields' => array('Song.id', 'Song.title', 'Song.artist', 'Song.url'),
